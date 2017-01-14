@@ -7,7 +7,7 @@ class Tree:
 		self.root = None
 
 	# create a new node
-	def addNode (self, val):
+	def createNode (self, val):
 		node = Node()
 		node.setVal(val)
 		return node
@@ -42,13 +42,13 @@ class Tree:
 
 if __name__ == '__main__':
 	t = Tree()
-	t.setRoot(t.addNode(10));
-	t.getRoot().setLeftChild(t.addNode(20))
-	t.getRoot().setRightChild(t.addNode(30))
-	t.getRoot().getLeftChild().setLeftChild(t.addNode(40))
-	t.getRoot().getLeftChild().setRightChild(t.addNode(50))
-	t.getRoot().getRightChild().setLeftChild(t.addNode(60))
-	t.getRoot().getRightChild().setRightChild(t.addNode(70))
+	t.setRoot(t.createNode(10));
+	t.getRoot().setLeftChild(t.createNode(20))
+	t.getRoot().setRightChild(t.createNode(30))
+	t.getRoot().getLeftChild().setLeftChild(t.createNode(40))
+	t.getRoot().getLeftChild().setRightChild(t.createNode(50))
+	t.getRoot().getRightChild().setLeftChild(t.createNode(60))
+	t.getRoot().getRightChild().setRightChild(t.createNode(70))
 
 	print "Doing pre-order traversal:"
 	t.preOrderTraversal(t.getRoot())
