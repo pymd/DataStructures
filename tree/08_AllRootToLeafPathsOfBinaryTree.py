@@ -24,6 +24,7 @@ class Tree:
 			Print out all of its root-to-leaf paths one per line.
 			Using an external queue/array of length = Max Depth of tree.
 			Time Complexity: O(n)
+			Space Complexity: O(logn)
 		"""
 		if current is None:
 			return
