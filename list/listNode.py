@@ -3,6 +3,14 @@ class Node:
         self.val = 0
         self.next = None
 
+    def __str__(self):
+        result = ''
+        if self.val == 0 and self.next == None:
+            return result
+        else:
+            result = str(self.val)
+            return result
+
     def getVal(self):
         return self.val
 
