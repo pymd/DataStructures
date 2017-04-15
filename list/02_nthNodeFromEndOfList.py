@@ -29,6 +29,27 @@ class List:
 			current = current.getNext()
 		print 'NULL'
 
+	def getNthNodeFromEndUsingTwoScans(self, n):
+		"""
+			This solution assumes that 'length' of the list is not maintained.
+			Thus, it uses one scan to find length of the list. And second scan,
+			to find (length-n)th node from starting.
+		"""
+		if (n == 0) or (n > self.length):
+			return None
+		cur = self.head
+		length = 0
+		while cur != None:
+			cur = cur.getNext()
+			length += 1
+		cur = self.head
+		m = length-n
+		i = 0
+		while i < m and cur != None:
+			cur = cur.getNext()
+			i += 1
+		return cur
+
 	def getNthNodeFromEnd(self, n):
 		first = self.head
 		second = self.head
@@ -44,6 +65,17 @@ class List:
 			second = second.getNext()
 		return first
 
+	def getNthNodeFromEndRecursive(self, current, n):
+		global counter
+		if current is not None:
+			return_value = self.getNthNodeFromEndRecursive(current.getNext(), n)
+			if return_value:
+				return return_value
+			counter += 1
+			if counter == n:
+				return current
+		return None
+
 if __name__ == '__main__':
 	l = List()
 	l.addNode(10)
@@ -57,8 +89,20 @@ if __name__ == '__main__':
 
 	n = input('Enter n:')
 	node = l.getNthNodeFromEnd(n)
+	node2 = l.getNthNodeFromEndUsingTwoScans(n)
+	counter = 0
+	node3 = l.getNthNodeFromEndRecursive(l.getHead(), n)
 	if node is None:
 		print n,'th node from the end is: None'
 	else:
 		print n,'th node from the end is:',node.getVal()
 
+	if node2 is None:
+		print n,'th node from the end is: None'
+	else:
+		print n,'th node from the end is:',node2.getVal()
+
+	if node3 is None:
+		print n,'th node from the end is: None'
+	else:
+		print n,'th node from the end is:',node3.getVal()
