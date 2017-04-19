@@ -10,7 +10,7 @@ def pairWithGivenSumNaive (arr, s):
 		for j in arr[i+1:]:
 			if n + j == s:
 				found = True
-				print 'Pair found at index:',i,arr.index(j)
+				print 'Pair found at index:',i,arr.index(j,i+1)
 	if not found:
 		print 'Pair not found'
 
@@ -42,11 +42,17 @@ def pairWithGivenSumUsingHashing (arr, s):
 	"""
 	index = dict()
 	found = False
-	for i in arr:
-		if (s-i) in index:
-			print 'Pair found is:',i,s-i
+	for i,n in enumerate(arr):
+		if (s-n) in index:
+			print 'Pair found is:',n,s-n,'at indices:',
+			for j in index[s-n]:
+				print j,i
 			found = True
-		index[i] = True
+		
+		if n not in index:
+			index[n] = [i]
+		else:
+			index[n].append(i)
 	if not found:
 		print 'Pair not found'
 		
@@ -56,7 +62,7 @@ if __name__ == '__main__':
 	s = 10
 	print 'Using naive approach:'
 	pairWithGivenSumNaive (arr, s)
-	print 'Using Sorting:'
-	pairWithGivenSumUsingSorting (arr, s)
 	print 'Using Hashing:'
 	pairWithGivenSumUsingHashing (arr, s)
+	print 'Using Sorting:'
+	pairWithGivenSumUsingSorting (arr, s)
