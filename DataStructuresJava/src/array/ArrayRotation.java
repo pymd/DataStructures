@@ -1,5 +1,7 @@
 package array;
 
+import java.util.Arrays;
+
 public class ArrayRotation {
     private int[] arr;
 
@@ -13,6 +15,24 @@ public class ArrayRotation {
             System.out.print(arr[i] + " ");
         }
         System.out.println();
+    }
+
+    private static void reverse(int[] arr, int start, int end){
+        int l = start;
+        int r = end;
+        while(l < r){
+            int temp = arr[l];
+            arr[l] = arr[r];
+            arr[r] = temp;
+            l++;r--;
+        }
+    }
+
+    // REVERSAL ALGORITHM FOR ARRAY ROTATION
+    public static void rotate(int[] arr, Integer d, Integer n){
+        reverse(arr, 0, n-1);
+        reverse(arr, 0, d-1);
+        reverse(arr, d, n-1);
     }
 
     // Todo: Imp - Euclid's Algorithm to Find GCD of 2 numbers
@@ -49,7 +69,9 @@ public class ArrayRotation {
 
         ArrayRotation arrObj = new ArrayRotation(arr);
         arrObj.printArray();
-        arrObj.jugglingAlgorithm(arr, d, arr.length);
+//        arrObj.jugglingAlgorithm(arr, d, arr.length);
+        rotate(arr, d, arr.length);
         arrObj.printArray();
+
     }
 }
