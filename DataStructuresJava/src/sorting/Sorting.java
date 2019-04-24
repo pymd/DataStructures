@@ -1,6 +1,7 @@
 package sorting;
 
 import java.util.Arrays;
+import heap.MaxHeap;
 
 public class Sorting {
     // Time Complexity: O(n**2)
@@ -50,6 +51,23 @@ public class Sorting {
         merge(arr, start, mid, end);                // O(n)
     }
 
+    public static void heapSort(Integer[] arr, Integer n){
+        MaxHeap heap = new MaxHeap(n);
+        heap.setArr(arr);
+        Integer[] heapArr = heap.getArr();
+
+        heap.buildMaxHeap();
+
+        for(int i=0; i<arr.length; i++){
+            Integer temp = heapArr[n-1];
+            heapArr[n-1] = heapArr[0];
+            heapArr[0] = temp;
+
+            heap.setN(--n);
+            heap.heapify(0);
+        }
+    }
+
     public static void main(String[] args){
         Integer[] arr = new Integer[]{30,12,51,21,5,1,5,55,60};
         System.out.println("Unsorted Array is: " + Arrays.toString(arr));
@@ -58,9 +76,13 @@ public class Sorting {
         System.out.println("Array after insertionSort is: " + Arrays.toString(arr));
 
         arr = new Integer[]{30,12,51,21,5,1,5,55,60};
-        arr = Arrays.copyOf(arr, 3);
         System.out.println("Unsorted Array is: " + Arrays.toString(arr));
         mergeSort(arr, 0, arr.length-1);
         System.out.println("Array after mergeSort is: " + Arrays.toString(arr));
+
+        arr = new Integer[]{30,12,51,21,5,1,5,55,60};
+        System.out.println("Unsorted Array is: " + Arrays.toString(arr));
+        heapSort(arr, arr.length);
+        System.out.println("Array after heapSort is: " + Arrays.toString(arr));
     }
 }
