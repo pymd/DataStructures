@@ -37,5 +37,5 @@ def mergeSort(l,start,end):
 if __name__ == '__main__':
 	l = [2,701,12,141,14,11,41,20,1]
 	#l = [2,1]
-	print 'Original array:',l
-	print 'The sorted array is:',mergeSort(l, 0, len(l)-1)
+	print('Original array:',l)
+	print('The sorted array is:',mergeSort(l, 0, len(l)-1))
