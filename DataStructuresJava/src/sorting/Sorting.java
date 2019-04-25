@@ -63,7 +63,7 @@ public class Sorting {
             heapArr[n-1] = heapArr[0];
             heapArr[0] = temp;
 
-            heap.setN(--n);
+            heap.setHeapSize(--n);
             heap.heapify(0);
         }
     }
