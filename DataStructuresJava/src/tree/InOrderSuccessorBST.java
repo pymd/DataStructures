@@ -61,16 +61,16 @@ public class InOrderSuccessorBST {
             return minNodeInBST(node.getRightChild());
         }
         Node current = root;
-        Node ancestor = current;
+        Node successor = current;
         while(current != null && current != node){
             if(current.getKey() > node.getKey()){
-                ancestor = current;
+                successor = current;
                 current = current.getLeftChild();
             } else {
                 current = current.getRightChild();
             }
         }
-        return ancestor;
+        return successor;
     }
 
     public static void main(String[] args){
@@ -92,7 +92,7 @@ public class InOrderSuccessorBST {
 
         Node n = tree.getRoot().getLeftChild().getRightChild().getLeftChild();
         System.out.println("Find successor for node:" + n.getKey());
-        Node ancestor = tree.getInOrderSuccessor(tree.getRoot(), n);
-        System.out.println("InOrder Successor of the node: " + ancestor.getKey());
+        Node successor = tree.getInOrderSuccessor(tree.getRoot(), n);
+        System.out.println("InOrder Successor of the node: " + successor.getKey());
     }
 }
