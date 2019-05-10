@@ -101,6 +101,10 @@ public class MaxHeap {
     }
 
     // O(log n)
+    /*
+        Reduce Heap Size by 1
+        Replace first array element by last
+     */
     public Integer extractMax(){
         if(heapSize.equals(0))
             return null;
@@ -117,7 +121,8 @@ public class MaxHeap {
 
     // O(log n)
     /*
-        Insert at last position, move up and fix heap property
+        Insert at last position,
+        Move up and fix heap property
      */
     public void insertKey(Integer k){
         if(heapSize.equals(capacity)){
