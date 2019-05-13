@@ -1,6 +1,6 @@
 package tree;
 
-public class NthNodeInOrder {
+public class NthNodeInOrder13 {
     Node root;
     static int count;
 
@@ -29,7 +29,7 @@ public class NthNodeInOrder {
     }
 
     public static void main(String[] args){
-        NthNodeInOrder tree = new NthNodeInOrder();
+        NthNodeInOrder13 tree = new NthNodeInOrder13();
         tree.setRoot(new Node(1));
         tree.getRoot().setLeftChild(new Node(2));
         tree.getRoot().setRightChild(new Node(3));

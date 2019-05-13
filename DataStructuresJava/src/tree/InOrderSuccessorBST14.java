@@ -1,6 +1,6 @@
 package tree;
 
-public class InOrderSuccessorBST {
+public class InOrderSuccessorBST14 {
     Node root;
 
     public Node getRoot(){
@@ -12,7 +12,7 @@ public class InOrderSuccessorBST {
     }
 
     // constructor
-    public InOrderSuccessorBST(Node root){
+    public InOrderSuccessorBST14(Node root){
         this.setRoot(root);
     }
 
@@ -74,7 +74,7 @@ public class InOrderSuccessorBST {
     }
 
     public static void main(String[] args){
-        InOrderSuccessorBST tree = new InOrderSuccessorBST(new Node(5));
+        InOrderSuccessorBST14 tree = new InOrderSuccessorBST14(new Node(5));
         tree.insertIntoBST(tree.getRoot(), 10);
         tree.insertIntoBST(tree.getRoot(), 1);
         tree.insertIntoBST(tree.getRoot(), 6);

@@ -1,6 +1,6 @@
 package tree;
 
-public class Diameter {
+public class Diameter12 {
     Node root;
 
     class Height{
@@ -68,7 +68,7 @@ public class Diameter {
     }
 
     public static void main(String[] args){
-        Diameter tree = new Diameter();
+        Diameter12 tree = new Diameter12();
         tree.setRoot(new Node(1));
         tree.getRoot().setLeftChild(new Node(2));
         tree.getRoot().setRightChild(new Node(3));
@@ -81,10 +81,10 @@ public class Diameter {
         tree.inOrder(tree.getRoot());
         System.out.println("");
 
-        System.out.println("Diameter of tree is:");
+        System.out.println("Diameter12 of tree is:");
         System.out.println(tree.getDiameter(tree.getRoot()));
 
-        System.out.println("Diameter of tree with optimized Algo is:");
+        System.out.println("Diameter12 of tree with optimized Algo is:");
         System.out.println(tree.getDiameterOptimized(tree.getRoot()));
     }
 }

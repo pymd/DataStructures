@@ -1,6 +1,6 @@
 package tree;
 
-public class InOrderSuccessor {
+public class InOrderSuccessor15 {
     private Node root;
 
     public Node getRoot(){
@@ -73,7 +73,7 @@ public class InOrderSuccessor {
     }
 
     public static void main(String[] args){
-        InOrderSuccessor tree = new InOrderSuccessor();
+        InOrderSuccessor15 tree = new InOrderSuccessor15();
         tree.setRoot(new Node(1));
         tree.getRoot().setLeftChild(new Node(2));
         tree.getRoot().setRightChild(new Node(3));
