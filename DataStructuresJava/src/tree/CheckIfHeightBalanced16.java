@@ -1,9 +1,9 @@
 package tree;
 
-public class CheckIfHeightBalanced17 {
+public class CheckIfHeightBalanced16 {
     private Node root;
 
-    public CheckIfHeightBalanced17(Node root){
+    public CheckIfHeightBalanced16(Node root){
         setRoot(root);
     }
 
@@ -37,7 +37,7 @@ public class CheckIfHeightBalanced17 {
     }
 
     public static void main(String[] args){
-        CheckIfHeightBalanced17 tree = new CheckIfHeightBalanced17(new Node(1));
+        CheckIfHeightBalanced16 tree = new CheckIfHeightBalanced16(new Node(1));
         tree.getRoot().setLeftChild(new Node(2));
         tree.getRoot().setRightChild(new Node(3));
         tree.getRoot().getRightChild().setRightChild(new Node(10));
